@@ -1,0 +1,24 @@
+{
+  "name": "dudescanner",
+  "description": "Electronic scanner for student ID's, for hall passes and rewards systems.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johneckert2023219/dudescanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johneckert2023219/dudescanner/issues"
+  },
+  "homepage": "https://github.com/johneckert2023219/dudescanner#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "expressjs": "^1.0.1"
+  }
+}
