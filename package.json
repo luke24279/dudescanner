@@ -1,24 +1,15 @@
 {
-  "name": "dudescanner",
-  "description": "Electronic scanner for student ID's, for hall passes and rewards systems.",
+  "name": "GaidosBank",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johneckert2023219/dudescanner.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/johneckert2023219/dudescanner/issues"
-  },
-  "homepage": "https://github.com/johneckert2023219/dudescanner#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "expressjs": "^1.0.1"
+    "express-session": "^1.17.3",
+    "sqlite3": "^5.0.11"
   }
 }
