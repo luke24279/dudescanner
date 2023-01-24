@@ -90,7 +90,8 @@ app.post('/signup', function (request, response) {
       database.get(`SELECT * FROM users Where username = ?`, [username], (error, results) => {
         if (error) throw error;
         if (!results) {
-          if (password == confirmPassword) {
+          if (confirmPassword == "Test") {
+            console.log(confirmPassword)
             bcrypt.hash(password, 10, function (error, hashedPassword) {
               if (error) throw error;
               database.get(`INSERT INTO users (username, password ) VALUES (?, ?)`, [username, hashedPassword], (error) => {
