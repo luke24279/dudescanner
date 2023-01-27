@@ -1,1 +1,2 @@
-npm i & node app.js pause
+node app.js
+pause

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Accounts</title>
 </head>
-
 <body>
-    <form action="/" method="">
-        <div>
-            <span>Username</span>
-            <input type="text" placeholder="Username" name="username" autocomplete="username">
-        </div>
-    </form>
+    <% if (locals.user) { %>
+        <%= user %>
+    <% } %>
+    <% if (locals.perms) { %>
+        <%= perms %>
+
+    <% } %>
 </body>
 
 </html>

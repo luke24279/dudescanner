@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script>
-        function confirmDelete() {
-            if (confirm('Are you sure you want to delete your account?')) {
-                window.location.href = "/deleteAccount";
-            }
+    function confirmDelete() {
+        if (confirm('Are you sure you want to delete your account?')) {
+            window.location.href = "/deleteAccount";
         }
+    }
     </script>
 </head>
 
@@ -19,6 +19,9 @@
     <p>Welcome Back <%=user%>!</p>
     <a href="/logout">logout</a>
     <a href="/changePassword">Change Password</a>
+    <% if (perms == 0) { %>
+        <a href="/acc">View Accounts</a>
+    <% } %>
     <button onclick='confirmDelete()'>Delete Account</button>
 </body>
 
