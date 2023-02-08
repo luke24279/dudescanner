@@ -109,6 +109,7 @@ app.post('/signup', function (request, response) {
               // Checks the database for any users with admin perms
               database.get(`SELECT * FROM users Where perms = 0`, (error, results) => {
                 // If there are no users with admin perms, give the account admin permissions. Otherwise, give them basic permissions.
+                if (error) throw error;
                 if (!results) {
                   database.get(`INSERT INTO users (username, password, perms) VALUES (?, ?, ?)`, [username, hashedPassword, 0], (error) => {
                     if (error) throw error;
@@ -197,7 +198,6 @@ app.get('/acc', function (request, response) {
       perms: results.perms
     })
   })
-  response.render('acc.ejs')
 })
 
 
