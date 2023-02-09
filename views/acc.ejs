@@ -8,15 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accounts</title>
 </head>
+<div class="userInfo">
 
-<body>
-    <% if (locals.user) { %>
+    <body>
+        <% if (locals.user) { %>
         <%= user %>
-    <% } %>
-    <% if (locals.perms) { %>
+        <% } %>
+        <% if (locals.perms) { %>
         <%= perms %>
 
-    <% } %>
-</body>
+        <% } %>
+        <a href="/">home</a>
+        <a href="/logout">logout</a>
+    </body>
+</div>
 
 </html>
