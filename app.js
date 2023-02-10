@@ -39,7 +39,7 @@ function isAuthenticated(request, response, next) {
 app.get('/', isAuthenticated, function (request, response) {
   try {
     database.get(`SELECT * FROM users Where username = ?`, [request.session.user], function (error, results) {
-      console.log(results);
+      //      console.log(results);
       response.render('index.ejs', {
         user: request.session.user,
         perms: results.perms
@@ -192,7 +192,8 @@ app.get('/deleteAccount', function (request, response) {
 })
 
 app.get('/acc', function (request, response) {
-  database.get('SELECT * FROM users', [request.session.user], function (error, results) {
+  database.get('SELECT * FROM users', function (error, results) {
+    console.log(results)
     response.render('acc.ejs', {
       user: request.session.user,
       perms: results.perms

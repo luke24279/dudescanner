@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS link not working, using <style> tag until free time to update it */
+    body {
+        background-color: darksalmon;
+        text-align: left;
+        margin: 50px;
+    }
+
+    #links {
+        text-align: left;
+        margin-top: 5px;
+        font-size: x-large;
+    }
+
+    #user {
+        font-size: xx-large;
+        color: #7AE996;
+    }
+
+    #userperms {
+        font-size: xx-large;
+        color: #7AE996;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -11,15 +34,19 @@
 <div class="userInfo">
 
     <body>
-        <% if (locals.user) { %>
-        <%= user %>
-        <% } %>
-        <% if (locals.perms) { %>
-        <%= perms %>
+        <div id="user">
+            <%= user %>
+        </div>
+        <div id="userperms">
+            <% if (perms <= 0) { %>
+            Your perms are <%= perms %>
+            <% } %>
+        </div>
 
-        <% } %>
-        <a href="/">home</a>
-        <a href="/logout">logout</a>
+        <div id="links">
+            <a id="home" href="/">home</a>
+            <a href="/logout">logout</a>
+        </div>
     </body>
 </div>
 
