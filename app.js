@@ -192,12 +192,18 @@ app.get('/deleteAccount', function (request, response) {
 })
 
 app.get('/acc', function (request, response) {
-  database.get('SELECT * FROM users', function (error, results) {
-    console.log(results)
-    response.render('acc.ejs', {
-      user: request.session.user,
-      perms: results.perms
-    })
+  database.get(`SELECT * FROM users Where perms = 0`, (error, results) => {
+    if (results) {
+      database.get('SELECT * FROM users', function (error, results) {
+        console.log(results)
+        response.render('acc.ejs', {
+          user: request.session.user,
+          perms: results.perms
+        })
+      })
+    } else {
+      response.render('/')
+    }
   })
 })
 
