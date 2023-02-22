@@ -1,5 +1,5 @@
-body {
-    /* background-color: rgb(134, 19, 201); */
+#acc {
+    background-color: #FF8040;
     text-align: left;
     margin-top: 50px;
     font-size: xx-large;
@@ -8,7 +8,7 @@ body {
 }
 
 #one {
-    text-align: left;
+    text-align: center;
     font-style: italic;
     color: #7AE996;
 }
@@ -29,10 +29,28 @@ body {
     color: #7AE996;
 }
 
-#index {
+body {
     background-color: #FF8040 ;
     font-size: xx-large;
     text-align: center;
-    color: #7AE996;
+    color: #1EE198;
 
 }
+a:link {
+    color: #981EE1;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #981EE1;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #981EE1;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #981EE1;
+  }
