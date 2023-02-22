@@ -1,4 +1,38 @@
 body {
+    /* background-color: rgb(134, 19, 201); */
+    text-align: left;
+    margin-top: 50px;
+    font-size: xx-large;
+    color: #7AE996;
+
+}
+
+#one {
+    text-align: left;
+    font-style: italic;
+    color: #7AE996;
+}
+
+#links {
+    text-align: left;
+    margin-top: 5px;
+    font-size: x-large;
+}
+
+#user {
+    font-size: xx-large;
+    color: #7AE996;
+}
+
+#userperms {
+    font-size: xx-large;
+    color: #7AE996;
+}
+
+#index {
+    background-color: #FF8040 ;
+    font-size: xx-large;
     text-align: center;
-    background-color: bisque;
+    color: #7AE996;
+
 }

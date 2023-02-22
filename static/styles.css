@@ -1,0 +1,23 @@
+#links {
+    text-align: left;
+    margin-top: 5px;
+    font-size: x-large;
+}
+#user {
+    font-size: xx-large;
+    color: #7AE996;
+}
+#userperms {
+    font-size: xx-large;
+    color: #7AE996;
+}
+div {
+    text-align: left;
+    margin-top: 50px;
+}
+body {
+    background-color: darksalmon;
+    text-align: left;
+    margin-top: 50px;
+    font-size: xx-large;
+}
