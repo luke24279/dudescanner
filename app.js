@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
+const { request } = require('express');
 
 
 // Database Setup
@@ -26,6 +27,14 @@ app.use(session({
 
 // Setup Variables
 const port = 3000;
+const pagePermissions = {
+  acc: 1,
+  login: 3,
+  signup: 3,
+  logout: 2,
+  changePassword: 2,
+  deleteAccount: 2
+}
 
 teacher = false
 
@@ -33,6 +42,28 @@ teacher = false
 function isAuthenticated(request, response, next) {
   if (request.session.user) next();
   else response.redirect('/login');
+}
+function permCheck(request, response, next) {
+  if (request.url) {
+      // Defines users desired endpoint
+      let urlPath = request.url
+      // Checks if url has a / in it and removes it from the string
+      if (urlPath.indexOf('/') != -1) {
+          urlPath = urlPath.slice(urlPath.indexOf('/') + 1)
+      }
+      // Check for ?(urlParams) and removes it from the string
+      if (urlPath.indexOf('?') != -1) {
+          console.log(urlPath.indexOf('?'));
+          urlPath = urlPath.slice(0, urlPath.indexOf('?'))
+      }
+      // Checks if users permissions are high enough
+      console.log([request.session.perms])
+      if ([request.session.perms] <= pagePermissions[urlPath]) {
+          next()
+      } else {
+          response.send('Not High Enough Permissions')
+      }
+  }
 }
 
 
@@ -75,6 +106,7 @@ app.post('/login', function (request, response) {
             if (isMatch) {
               if (error) throw error;
               request.session.user = username;
+              request.session.perms = results.perms
               response.redirect('/');
             } else response.redirect('/login');
           })
@@ -192,7 +224,7 @@ app.get('/deleteAccount', function (request, response) {
   })
 })
 
-app.get('/acc', function (request, response) {
+app.get('/acc', permCheck, function (request, response) {
   database.get(`SELECT * FROM users Where perms = 0`, (error, results) => {
     if (results) {
       database.get('SELECT * FROM users', function (error, results) {
