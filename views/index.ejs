@@ -20,7 +20,7 @@
     <p>Welcome Back <%=user%>!</p>
     <div>
         <a href="/changePassword">Change Password<br></a>
-        <% if (perms==0) { %>
+        <% if (perms <= 1) { %>
             <a href="/acc">View Accounts<br></a>
             <% } %>
         <a href="/logout">Logout<br></a>
