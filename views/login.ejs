@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <p id="one">Login</p>
+    <form action="/login" method="post" autocomplete='on'>
+        <div class="username1">
+            <span>Username</span>
+            <input type="text" placeholder="Username" name="username" autocomplete="username">
+        </div>
+        <div class="password1">
+            <span>Password</span>
+            <input type="password" placeholder="Password" name="password" autocomplete="password">
+        </div>
+        <input type="submit" value="Login">
+    </form>
+    <p>No account? <a href="/signup">Signup</a> here</p>
+</body>
+
+</html>
